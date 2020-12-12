@@ -11,4 +11,4 @@ Save millions in gas.
 
 # Gas usage benchmark
 
-![alt text](https://github.com/marcellobardus/erc20-permit-adapter/blob/master/benchmark.png?raw=true)
+![alt text](https://github.com/marcellobardus/erc20-permit-adapter/blob/master/.github/benchmark.png?raw=true)
