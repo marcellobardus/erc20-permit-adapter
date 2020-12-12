@@ -3,7 +3,7 @@ As I love the concept of non approving contracts to spend your tokens, I'm a big
 # How it works
 
 The default assumption is that an infinite allowance is given to Adapter contract.
-The adapter contract exposes a method transfer from which requires a valid signature, if the signature is valid the erc20 transfer goes further.
+The adapter contract exposes a transferFrom method which requires a valid signature, if the signature is valid the erc20 transfer goes further.
 
 # Goal
 
