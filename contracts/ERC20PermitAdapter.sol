@@ -1,6 +1,8 @@
 //SPDX-License-Identifier: Unlicense
 pragma solidity 0.7.5;
 
+import "hardhat/console.sol";
+
 import "openzeppelin-solidity/contracts/utils/Counters.sol";
 import "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
 import "openzeppelin-solidity/contracts/cryptography/ECDSA.sol";
@@ -27,7 +29,7 @@ contract ERC20PermitAdapter is IERC20PermitAdapter {
 
         bytes32 permitHash =
             keccak256(
-                abi.encodePacked(
+                abi.encode(
                     asset,
                     msg.sender,
                     amount,
@@ -36,7 +38,8 @@ contract ERC20PermitAdapter is IERC20PermitAdapter {
                 )
             );
 
-        address signer = ECDSA.recover(permitHash, signature);
+        address signer =
+            ECDSA.recover(ECDSA.toEthSignedMessageHash(permitHash), signature);
 
         require(signer == from, "ERC20EIP2612Adapter: invalid signature");
 

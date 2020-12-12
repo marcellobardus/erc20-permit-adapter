@@ -1,6 +1,6 @@
 import { run, ethers } from "hardhat";
 
-import { MaxUint256 } from "ethers/constants";
+import { WeiPerEther } from "ethers/constants";
 
 async function main() {
   await run("compile");
@@ -18,7 +18,7 @@ async function main() {
   const testErc20 = await TestERC20.deploy(
     "TestDai",
     "TDAI",
-    MaxUint256.toHexString()
+    WeiPerEther.mul(100000).toHexString()
   );
 
   await testErc20.deployed();

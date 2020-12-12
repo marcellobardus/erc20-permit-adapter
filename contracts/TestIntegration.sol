@@ -14,7 +14,7 @@ contract TestIntegration {
         adapter = _adapter;
     }
 
-    function test(
+    function testAdapterTransfer(
         address recipient,
         uint256 amount,
         uint256 deadline,
@@ -28,5 +28,9 @@ contract TestIntegration {
             deadline,
             signature
         );
+    }
+
+    function testLegacyTransfer(address recipient, uint256 amount) external {
+        tokenToBeTransfered.transferFrom(msg.sender, recipient, amount);
     }
 }
