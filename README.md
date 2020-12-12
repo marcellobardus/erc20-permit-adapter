@@ -8,3 +8,7 @@ The adapter contract exposes a method transfer from which requires a valid signa
 # Goal
 
 Save millions in gas.
+
+# Gas usage benchmark
+
+![alt text](https://github.com/marcellobardus/erc20-permit-adapter/blob/master/benchmark.png?raw=true)
